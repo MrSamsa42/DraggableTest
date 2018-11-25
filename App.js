@@ -7,7 +7,7 @@ import {
   Image,
   Button
 } from 'react-native';
-import { DraggableGrid } from 'react-native-draggable-grid';
+import { DraggableGrid } from './components/draggable-grid';
 import ImageContainer from './components/ImageContainer';
 
 import { YellowBox } from 'react-native';
@@ -57,7 +57,7 @@ export default class MyTest extends Component {
 
   render() {
     return (
-      this.state.data.length > 0  ? 
+      this.state.show  ? 
       <View style={styles.wrapper}>
         <DraggableGrid
           numColumns={3}
@@ -73,12 +73,17 @@ export default class MyTest extends Component {
               this.setState( (state) => ({data: origdata}));
               }}
           />
+          <Button
+            title={"Log Images in State"}
+            onPress={() => console.log(this.state.data)}
+          />
         </View>
       </View>
       :
       <View style={styles.wrapper}>
         <Text>Nothing to see here</Text>
         <Button
+            style={{backgroundColor: red}}
             title={"Reset"}
             onPress={() => {
               this.setState( (state) => ({data: origdata}));
