@@ -1,5 +1,4 @@
 # DraggableTest
-A demo of 
 
 This is a simple app put together to test the functionality of the react-native-draggable-grid library, https://github.com/SHISME/react-native-draggable-grid
 
